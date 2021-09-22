@@ -1,0 +1,10 @@
+{
+    "compilerOptions": {
+        "target": "ES2015",
+        "noImplicitAny": true,
+        "strictNullChecks": true,
+        "outDir": "build"
+    },
+    "include": ["src/*"],
+    "exclude": ["build", "node_modules"]
+}
