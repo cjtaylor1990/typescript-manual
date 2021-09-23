@@ -37,10 +37,10 @@ const functionWithObjectParamer = (x : { firstName : string; lastName : string }
 }
 console.log(functionWithObjectParamer({firstName : "Corbin", lastName : "Taylor"}))
 
+// You can add "?" for optional object properties
 const functionWithOptionalObjectProperty = (x : { firstName : string, lastName? : string }) : string => {
     return x.lastName ? x.firstName + " " + x.lastName : x.firstName
 }
-console.log(functionWithOptionalObjectProperty({ firstName : "Bob"}))
-console.log(functionWithOptionalObjectProperty({ firstName : "Billy", lastName : "Bob"}))
-
+console.log(functionWithOptionalObjectProperty({ firstName : "Bob" }))
+console.log(functionWithOptionalObjectProperty({ firstName : "Billy", lastName : "Bob" }))
 
