@@ -44,3 +44,34 @@ const functionWithOptionalObjectProperty = (x : { firstName : string, lastName? 
 console.log(functionWithOptionalObjectProperty({ firstName : "Bob" }))
 console.log(functionWithOptionalObjectProperty({ firstName : "Billy", lastName : "Bob" }))
 
+// Union type. Can be either number or string.
+const printId = (id: number | string) => {
+    console.log("Your ID is: " + id)
+}
+printId("101")
+printId(202)
+
+// If you do something to a union type, it must be possible with all types
+const printIdNew = (id: number | string) => {
+    // but you can narrow the code
+    if (typeof id === "string") {
+        console.log(id.toUpperCase())
+    } else {
+        console.log(id)
+    }
+}
+printIdNew(101)
+printIdNew("meow")
+
+// Another example of union type
+const welcomePeople = (x: string[] | string) => {
+    // with narrowing
+    if (Array.isArray(x)) {
+        console.log("Hello, " + x.join(" and "))
+    } else {
+        console.log("Welcome lone traveler " + x)
+    }
+}
+welcomePeople(["Corbin", "Caleb", "Collin"])
+welcomePeople("Corbin")
+
